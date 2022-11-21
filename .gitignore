@@ -1,0 +1,8 @@
+.vscode/
+.idea/
+*/**/tests/
+contest.acc.json
+*dSYM*
+input*
+a.out
+main
