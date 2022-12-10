@@ -33,16 +33,15 @@ ad_list_t *arr_resize(ad_list_t *self, int cap)
     return self;
 }
 
-ad_list_t *push_back(ad_list_t *self, int elem)
+void	push_back(ad_list_t *self, int elem)
 {
 	if (self->len >= self->cap)
 	{
 		if (! arr_resize(self, self->cap * 2))
-			return (NULL);
+			printf("failed resize memory allocate\n");
 	}
 	self->arr[self->len] = elem;
 	self->len++;
-	return (self);
 }
 
 ad_list_t *array_new(void)
@@ -52,7 +51,7 @@ ad_list_t *array_new(void)
 		return NULL;
 
     self->cap = 100;
-    self->arr = calloc(self->cap, sizeof(int));
+    self->arr = calloc(self->cap, sizeof(size_t));
     if (!self->arr) {
         free(self);
         return NULL;
