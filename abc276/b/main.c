@@ -92,10 +92,8 @@ int	main(void)
 		push_back(ad_list[b], a);
 	}
 
-	for (int i = 1; i <= N; i++)
-	{
-		if (ad_list[i] != NULL)
-		{
+	for (int i = 1; i <= N; i++) {
+		if (ad_list[i] != NULL) {
 			qsort(ad_list[i]->arr, ad_list[i]->len, sizeof(int), int_compare);
 			printf("%d", ad_list[i]->len);
 			for (int j = 0; j < ad_list[i]->len; j++)
